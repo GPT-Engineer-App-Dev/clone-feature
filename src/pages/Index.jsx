@@ -38,7 +38,7 @@ const Index = () => {
   };
 
   return (
-    <Box bg={colorMode === "dark" ? "black" : "white"} height="100vh">
+    <Box bg={colorMode === "dark" ? "#1a1a1a" : "white"} height="100vh">
       <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
         <VStack spacing={4}>
           <IconButton
