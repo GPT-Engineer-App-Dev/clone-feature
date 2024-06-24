@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Container, Text, VStack, Button, HStack } from "@chakra-ui/react";
+import { Box, Container, Text, VStack, Button, HStack } from "@chakra-ui/react";
 
 const Index = () => {
   const [time, setTime] = useState(0);
@@ -36,18 +36,20 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="6xl" fontWeight="bold">
-          {formatTime(time)}
-        </Text>
-        <HStack spacing={4}>
-          <Button colorScheme="green" size="lg" onClick={startTimer}>Start</Button>
-          <Button colorScheme="red" size="lg" onClick={stopTimer}>Stop</Button>
-          <Button colorScheme="yellow" size="lg" onClick={resetTimer}>Reset</Button>
-        </HStack>
-      </VStack>
-    </Container>
+    <Box bg="black" height="100vh">
+      <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+        <VStack spacing={4}>
+          <Text fontSize="6xl" fontWeight="bold" color="white">
+            {formatTime(time)}
+          </Text>
+          <HStack spacing={4}>
+            <Button colorScheme="green" size="lg" onClick={startTimer}>Start</Button>
+            <Button colorScheme="red" size="lg" onClick={stopTimer}>Stop</Button>
+            <Button colorScheme="yellow" size="lg" onClick={resetTimer}>Reset</Button>
+          </HStack>
+        </VStack>
+      </Container>
+    </Box>
   );
 };
 
