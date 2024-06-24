@@ -38,13 +38,13 @@ const Index = () => {
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={4}>
-        <Text fontSize="4xl" fontWeight="bold">
+        <Text fontSize="6xl" fontWeight="bold">
           {formatTime(time)}
         </Text>
         <HStack spacing={4}>
-          <Button colorScheme="green" onClick={startTimer}>Start</Button>
-          <Button colorScheme="red" onClick={stopTimer}>Stop</Button>
-          <Button colorScheme="yellow" onClick={resetTimer}>Reset</Button>
+          <Button colorScheme="green" size="lg" onClick={startTimer}>Start</Button>
+          <Button colorScheme="red" size="lg" onClick={stopTimer}>Stop</Button>
+          <Button colorScheme="yellow" size="lg" onClick={resetTimer}>Reset</Button>
         </HStack>
       </VStack>
     </Container>
