@@ -51,9 +51,9 @@ const Index = () => {
             {formatTime(time)}
           </Text>
           <HStack spacing={4}>
-            <Button colorScheme="green" size="lg" onClick={startTimer}>Start</Button>
-            <Button colorScheme="red" size="lg" onClick={stopTimer}>Stop</Button>
-            <Button colorScheme="yellow" size="lg" onClick={resetTimer}>Reset</Button>
+            <Button colorScheme="green" size="xl" onClick={startTimer}>Start</Button>
+            <Button colorScheme="red" size="xl" onClick={stopTimer}>Stop</Button>
+            <Button colorScheme="yellow" size="xl" onClick={resetTimer}>Reset</Button>
           </HStack>
         </VStack>
       </Container>
