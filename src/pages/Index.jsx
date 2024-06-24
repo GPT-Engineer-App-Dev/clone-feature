@@ -1,10 +1,12 @@
 import { useState, useRef } from "react";
-import { Box, Container, Text, VStack, Button, HStack } from "@chakra-ui/react";
+import { Box, Container, Text, VStack, Button, HStack, useColorMode, IconButton } from "@chakra-ui/react";
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 const Index = () => {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const timerRef = useRef(null);
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const formatTime = (time) => {
     const minutes = String(Math.floor(time / 6000)).padStart(2, "0");
@@ -36,10 +38,16 @@ const Index = () => {
   };
 
   return (
-    <Box bg="black" height="100vh">
+    <Box bg={colorMode === "dark" ? "black" : "white"} height="100vh">
       <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
         <VStack spacing={4}>
-          <Text fontSize="6xl" fontWeight="bold" color="white">
+          <IconButton
+            aria-label="Toggle color mode"
+            icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
+            onClick={toggleColorMode}
+            alignSelf="flex-end"
+          />
+          <Text fontSize="6xl" fontWeight="bold" color={colorMode === "dark" ? "white" : "black"}>
             {formatTime(time)}
           </Text>
           <HStack spacing={4}>
